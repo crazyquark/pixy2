@@ -70,7 +70,7 @@ HEADERS  += mainwindow.h \
 
 INCLUDEPATH += ../../common/inc
 
-QMAKE_CXXFLAGS_DEBUG += -O0
+QMAKE_CXXFLAGS_DEBUG += -O0 -g
 QMAKE_CXXFLAGS += -Wno-unused-parameter
 FORMS    += mainwindow.ui \
     configdialog.ui \
@@ -102,6 +102,7 @@ unix:!macx {
     DEFINES += __LINUX__
     PKGCONFIG += libusb-1.0
     LIBS += -lusb-1.0
+    CONFIG += debug
     INCLUDEPATH += /usr/include/libusb-1.0
     INCLUDEPATH += ../../../device/main_m4/inc/
     INCLUDEPATH += ../../../device/libpixy_m4/inc/
