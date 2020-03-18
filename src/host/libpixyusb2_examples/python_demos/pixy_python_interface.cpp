@@ -143,7 +143,7 @@ int line_get_barcodes(int max_barcodes, struct Barcode *barcodes)
 
 int demosaic(uint16_t width, uint16_t height, const uint8_t *bayerImage, uint8_t *image)
 {
-  uint32_t x, y, xx, yy, r, g, b;
+  uint16_t x, y, xx, yy, r, g, b;
   uint8_t *pixel0, *pixel;
 
   for (y = 0; y < height; y++)
@@ -198,6 +198,8 @@ int demosaic(uint16_t width, uint16_t height, const uint8_t *bayerImage, uint8_t
       *(image + 2) = b;
     }
   }
+
+  return 0;
 }
 
 void set_lamp(int upper, int lower)
