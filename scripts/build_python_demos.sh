@@ -35,6 +35,9 @@ cd ../src/host/libpixyusb2_examples/python_demos
 swig -c++ -python pixy.i
 ${PYTHON} swig.dat build_ext --inplace -D__LINUX__
 
+# account for the differnt names produces by compilers
+mv _pixy.*.so _pixy.so 
+
 files=(../../../../build/python_demos/*.so)
 if (( ${#files[@]} )); then
   rm ../../../../build/python_demos/*.so
